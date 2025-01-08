@@ -1,1 +1,12 @@
-{ "version": 2, "rewrites": [{ "source": "/(.*)", "destination": "/api" }] }
+{
+    "version": 2,
+    "name": "form-builder-backend",
+    "builds": [
+      { "src": "./app.js", "use": "@vercel/node" }
+    ],
+    "routes": [
+      { "src": "/api/(.*)", "dest": "/$1" },
+      { "src": "/(.*)", "dest": "/" }
+    ]
+  }
+  
